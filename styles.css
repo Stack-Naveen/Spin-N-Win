@@ -21,16 +21,14 @@ h1{
   
 }
 
-.gifts-container{
+#gifts-container{
     max-width: 1500px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin: 0px auto;
     padding: 20px;
-
-
-    
+ 
 }
 
 .gifts{

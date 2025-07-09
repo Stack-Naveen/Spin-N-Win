@@ -1,0 +1,63 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+  width: 100%;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  /* background-color: blueviolet; */
+}
+
+h1{
+    text-align: center;
+    margin: 20px 0px;
+    /* background-color: blanchedalmond; */
+}
+
+.gifts-container{
+    max-width: 1500px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0px auto;
+    padding: 20px;
+
+
+    
+}
+
+.gifts{
+    
+    width: 240px;
+    height: 60px;
+    background-color: aqua; 
+    background: linear-gradient(45deg, #ff6b6b, #feca57, #1dd1a1);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin: 10px;
+    font-weight: bold;
+  
+}
+
+.luckyBtn{
+   /*  background-color: darkslateblue; */
+    background: linear-gradient(45deg, blue, yellow);
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    
+}
+
+.luckyBtn:hover{
+    background-color: rgb(64, 37, 235);
+}

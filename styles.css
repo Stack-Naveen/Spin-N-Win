@@ -47,7 +47,7 @@ h1{
   
 }
 
-.luckyBtn{
+#luckyBtn{
     background-color: darkslateblue;
     /* background: linear-gradient(45deg, blue); */
     padding: 10px;
@@ -59,7 +59,7 @@ h1{
     
 }
 
-.luckyBtn:hover{
+#luckyBtn:hover{
     background-color: rgb(64, 37, 235);
     cursor: pointer;
     transition: 0.5s ease;

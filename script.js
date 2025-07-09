@@ -23,3 +23,10 @@ const gifts = [
   "₹750 Cash",
   "Earbuds",
 ];
+
+gifts.forEach((item) => {
+  giftsContainer.insertAdjacentHTML(
+    "beforeend",
+    `<div class="gifts">${item}</div>`
+  );
+});

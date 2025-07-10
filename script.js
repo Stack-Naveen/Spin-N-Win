@@ -30,3 +30,7 @@ gifts.forEach((item) => {
     `<div class="gifts">${item}</div>`
   );
 });
+
+luckyBtn.addEventListener("click", () => {
+  console.log("working");
+});

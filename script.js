@@ -1,5 +1,6 @@
 const giftsContainer = document.getElementById("gifts-container");
 const luckyBtn = document.getElementById("luckyBtn");
+const message = document.getElementById("message");
 
 const gifts = [
   "₹100 Cash",
@@ -32,5 +33,9 @@ gifts.forEach((item) => {
 });
 
 luckyBtn.addEventListener("click", () => {
-  console.log("working");
+  const random = Math.floor(Math.random() * gifts.length) + 1;
+  console.log(random);
+  const randomGift = gifts[random - 1];
+  console.log(randomGift);
+  message.textContent = `You won ${randomGift}`;
 });

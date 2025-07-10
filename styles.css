@@ -1,68 +1,70 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-    /* background-color: blueviolet; */
-    
-    }
-
-h1{
-    text-align: center;
-    margin: 20px 0px;
-  
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
-#gifts-container{
-    max-width: 1500px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 0px auto;
-    padding: 20px;
- 
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
 }
 
-.gifts{
-    
-    width: 240px;
-    height: 100px;
-   /*  background-color: aqua;  */
-    background: linear-gradient(45deg, rgb(39, 205, 155), rgb(78, 163, 243) );  
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    margin: 10px;
-    font-weight: bold;
-  
+h1 {
+  text-align: center;
+  margin: 20px 0px;
 }
 
-#luckyBtn{
-    background-color: darkslateblue;
-    /* background: linear-gradient(45deg, blue); */
-    padding: 10px;
-    color: white;
-    border-radius: 10px;
-    border: none;
-    bottom: 10px;
-    margin-bottom: 30px;
-    
+#gifts-container {
+  max-width: 1500px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0px auto;
+  padding: 20px;
 }
 
-#luckyBtn:hover{
-    background-color: rgb(64, 37, 235);
-    cursor: pointer;
-    transition: 0.5s ease;
-    transform: scale(1.05);
-    
+.gifts {
+  width: 240px;
+  height: 100px;
+  background: linear-gradient(45deg, rgb(39, 205, 155), rgb(78, 163, 243));
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin: 10px;
+  font-weight: bold;
+}
+
+#luckyBtn {
+  background-color: darkslateblue;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  bottom: 10px;
+  margin-bottom: 30px;
+}
+
+#luckyBtn:hover {
+  background-color: rgb(64, 37, 235);
+  cursor: pointer;
+  transition: 0.5s ease;
+  transform: scale(1.05);
+}
+
+#message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin: 10px 0px;
+  padding: 10px 20px;
+  font-size: 15px;
 }

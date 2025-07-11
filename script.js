@@ -31,11 +31,16 @@ gifts.forEach((item) => {
     `<div class="gifts">${item}</div>`
   );
 });
-
+let delay;
 luckyBtn.addEventListener("click", () => {
-  const random = Math.floor(Math.random() * gifts.length) + 1;
-  console.log(random);
-  const randomGift = gifts[random - 1];
-  console.log(randomGift);
-  message.textContent = `You won ${randomGift}`;
+  message.textContent = `please wait...`;
+  clearTimeout(delay);
+
+  delay = setTimeout(function () {
+    const random = Math.floor(Math.random() * gifts.length) + 1;
+    console.log(random);
+    const randomGift = gifts[random - 1];
+    console.log(randomGift);
+    message.textContent = `You won ${randomGift}`;
+  }, 5000);
 });

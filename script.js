@@ -5,7 +5,7 @@ const message = document.getElementById("message");
 const gifts = [
   "₹100 Cash",
   "Chocolates",
-  "₹500",
+  "₹500 Cash",
   "Smartphone",
   "Headphones",
   "₹50 Cash",
@@ -36,11 +36,20 @@ luckyBtn.addEventListener("click", () => {
   message.textContent = `please wait...`;
   clearTimeout(delay);
 
+  const intervalId = setInterval(function () {
+  const randomMovement = Math.floor(Math.random() * gifts.length);
+  console.log(randomMovement);
+}, 500);
+
   delay = setTimeout(function () {
     const random = Math.floor(Math.random() * gifts.length) + 1;
     console.log(random);
     const randomGift = gifts[random - 1];
     console.log(randomGift);
     message.textContent = `You won ${randomGift}`;
+
+    clearInterval(intervalId)
   }, 5000);
 });
+
+

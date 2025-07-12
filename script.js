@@ -34,19 +34,48 @@ gifts.forEach((item) => {
 let delay;
 luckyBtn.addEventListener("click", () => {
   message.textContent = `please wait...`;
+
   clearTimeout(delay);
 
+  const wonGift = document.querySelectorAll(".gifts");
+
+  wonGift.forEach((items) => items.classList.remove("wonGift"));
+
+  let previousMovementIndex = -1;
+
   const intervalId = setInterval(function () {
-    const randomMovement = Math.floor(Math.random() * gifts.length);
-    console.log(randomMovement);
+    let randomMovementIndex = Math.floor(Math.random() * gifts.length);
+
+    if (randomMovementIndex === previousMovementIndex) {
+      randomMovementIndex = (randomMovementIndex + 1) % gifts.length;
+    }
+    previousMovementIndex = randomMovementIndex;
+
+    let randomMovementGift = gifts[randomMovementIndex];
+    console.log(randomMovementGift);
+    wonGift[randomMovementIndex].classList.add("wonGift");
+
+    document
+      .querySelectorAll(".gifts")
+      .forEach((el) => el.classList.remove("wonGift"));
+
+    document
+      .querySelectorAll(".gifts")
+      [randomMovementIndex].classList.add("wonGift");
   }, 500);
 
   delay = setTimeout(function () {
-    const random = Math.floor(Math.random() * gifts.length) + 1;
+    const random = Math.floor(Math.random() * gifts.length);
     console.log(random);
-    const randomGift = gifts[random - 1];
+    const randomGift = gifts[random];
     console.log(randomGift);
     message.textContent = `You won ${randomGift}`;
+
+    document
+      .querySelectorAll(".gifts")
+      .forEach((el) => el.classList.remove("wonGift"));
+
+    wonGift[random].classList.add("wonGift");
 
     clearInterval(intervalId);
   }, 5000);

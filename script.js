@@ -37,9 +37,9 @@ luckyBtn.addEventListener("click", () => {
   clearTimeout(delay);
 
   const intervalId = setInterval(function () {
-  const randomMovement = Math.floor(Math.random() * gifts.length);
-  console.log(randomMovement);
-}, 500);
+    const randomMovement = Math.floor(Math.random() * gifts.length);
+    console.log(randomMovement);
+  }, 500);
 
   delay = setTimeout(function () {
     const random = Math.floor(Math.random() * gifts.length) + 1;
@@ -48,8 +48,6 @@ luckyBtn.addEventListener("click", () => {
     console.log(randomGift);
     message.textContent = `You won ${randomGift}`;
 
-    clearInterval(intervalId)
+    clearInterval(intervalId);
   }, 5000);
 });
-
-

@@ -68,3 +68,10 @@ h1 {
   padding: 10px 20px;
   font-size: 15px;
 }
+
+.wonGift {
+  background: linear-gradient(45deg, red, gold);
+  border: 5px;
+  border-style: dashed;
+  font-size: 25px;
+}

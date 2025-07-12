@@ -2,6 +2,10 @@ const giftsContainer = document.getElementById("gifts-container");
 const luckyBtn = document.getElementById("luckyBtn");
 const message = document.getElementById("message");
 
+const clickSound = new Audio("sounds/click.wav");
+const shuffleSound = new Audio("sounds/spin.wav");
+const winSound = new Audio("sounds/win.wav");
+
 const gifts = [
   "₹100 Cash",
   "Chocolates",
@@ -32,7 +36,13 @@ gifts.forEach((item) => {
   );
 });
 let delay;
+let isRunning = false;
+let intervalId = null;
 luckyBtn.addEventListener("click", () => {
+  if (isRunning) return;
+  isRunning = true;
+  luckyBtn.disabled = true;
+  clickSound.play();
   message.textContent = `please wait...`;
 
   clearTimeout(delay);
@@ -43,7 +53,10 @@ luckyBtn.addEventListener("click", () => {
 
   let previousMovementIndex = -1;
 
-  const intervalId = setInterval(function () {
+  intervalId = setInterval(function () {
+    shuffleSound.currentTime = 0;
+
+    shuffleSound.play();
     let randomMovementIndex = Math.floor(Math.random() * gifts.length);
 
     if (randomMovementIndex === previousMovementIndex) {
@@ -53,21 +66,15 @@ luckyBtn.addEventListener("click", () => {
 
     let randomMovementGift = gifts[randomMovementIndex];
     console.log(randomMovementGift);
+    wonGift.forEach((el) => el.classList.remove("wonGift"));
     wonGift[randomMovementIndex].classList.add("wonGift");
-
-    document
-      .querySelectorAll(".gifts")
-      .forEach((el) => el.classList.remove("wonGift"));
-
-    document
-      .querySelectorAll(".gifts")
-      [randomMovementIndex].classList.add("wonGift");
-  }, 500);
+  }, 400);
 
   delay = setTimeout(function () {
     const random = Math.floor(Math.random() * gifts.length);
     console.log(random);
     const randomGift = gifts[random];
+
     console.log(randomGift);
     message.textContent = `You won ${randomGift}`;
 
@@ -78,5 +85,8 @@ luckyBtn.addEventListener("click", () => {
     wonGift[random].classList.add("wonGift");
 
     clearInterval(intervalId);
+    winSound.play();
+    luckyBtn.disabled = false;
+    isRunning = false;
   }, 5000);
 });

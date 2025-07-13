@@ -35,9 +35,11 @@ gifts.forEach((item) => {
     `<div class="gifts">${item}</div>`
   );
 });
+
 let delay;
 let isRunning = false;
 let intervalId = null;
+
 luckyBtn.addEventListener("click", () => {
   if (isRunning) return;
   isRunning = true;
@@ -48,15 +50,14 @@ luckyBtn.addEventListener("click", () => {
   clearTimeout(delay);
 
   const wonGift = document.querySelectorAll(".gifts");
-
   wonGift.forEach((items) => items.classList.remove("wonGift"));
 
   let previousMovementIndex = -1;
 
   intervalId = setInterval(function () {
     shuffleSound.currentTime = 0;
-
     shuffleSound.play();
+
     let randomMovementIndex = Math.floor(Math.random() * gifts.length);
 
     if (randomMovementIndex === previousMovementIndex) {
@@ -65,17 +66,15 @@ luckyBtn.addEventListener("click", () => {
     previousMovementIndex = randomMovementIndex;
 
     let randomMovementGift = gifts[randomMovementIndex];
-    console.log(randomMovementGift);
+
     wonGift.forEach((el) => el.classList.remove("wonGift"));
     wonGift[randomMovementIndex].classList.add("wonGift");
   }, 400);
 
   delay = setTimeout(function () {
     const random = Math.floor(Math.random() * gifts.length);
-    console.log(random);
     const randomGift = gifts[random];
 
-    console.log(randomGift);
     message.textContent = `You won ${randomGift}`;
 
     document
@@ -85,7 +84,9 @@ luckyBtn.addEventListener("click", () => {
     wonGift[random].classList.add("wonGift");
 
     clearInterval(intervalId);
+
     winSound.play();
+
     luckyBtn.disabled = false;
     isRunning = false;
   }, 5000);
